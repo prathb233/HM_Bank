@@ -8,7 +8,7 @@ public class SavingsAccount extends Account{
 	final double  INTEREST_RATE = 0.075;
 	
     public SavingsAccount(int accountNumber, double accountBalance) {
-        super(accountNumber, "SavingsAccount", accountBalance);
+        super(accountNumber, "Savings", accountBalance);
     }
     
     @Override

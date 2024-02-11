@@ -11,7 +11,7 @@ public class Account {
 	//default Constr
 	public Account() {}
 	
-	//Constr overload
+	//Constr overload 1
 	public Account(int accountNumber, int customerId, String accountType, double accountBalance) {
 		this.accountNumber = accountNumber;
 		this.customerID = customerId;
@@ -19,9 +19,11 @@ public class Account {
 		this.accountBalance = accountBalance;
 	}
 	
-	public Account(int customerId, String accountType) {
+	//overload 2
+	public Account(int customerId, String accountType, double accountBalance) {
 		this.customerID = customerId;
 		this.accountType = accountType;
+		this.accountBalance = accountBalance;
 	}
 	
 	
@@ -79,14 +81,13 @@ public class Account {
 	}
 		
     //Calculate interest method
-    public void calculateInterest() {
-        if ("Savings".equals(accountType)) {
+    public double calculateInterest() {
             double interest = accountBalance * 0.045; // 4.5% interest rate
             accountBalance += interest;
-            System.out.println("\nInterest calculated and added.\nNew balance: $" + accountBalance);
-        } else {
-            System.out.println("\nInterest calculation is applicable only for Savings accounts.");
-        }
+            //System.out.println("\nInterest calculated and added.\nNew balance: $" + accountBalance);
+
+            return interest;
+
     }
 
 	@Override

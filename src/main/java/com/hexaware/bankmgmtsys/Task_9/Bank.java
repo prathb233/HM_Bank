@@ -32,8 +32,6 @@ public class Bank {
         
     }
 
-
-
     private static void operateAccount(BankAccount account) {
         Scanner scanner = new Scanner(System.in);
 

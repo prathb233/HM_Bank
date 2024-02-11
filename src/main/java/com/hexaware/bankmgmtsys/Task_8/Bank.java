@@ -35,7 +35,8 @@ public class Bank {
         
         
         while (true) {
-            System.out.println("\n1. Deposit\n2. Withdraw\n3. Account Balance \n4. Calculate Interest (for Savings Account)\n5. Exit");
+            System.out.println("\n1. Deposit\n2. Withdraw\n3. Account Balance "
+            		+ "\n4. Calculate Interest (for Savings Account)\n5. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
 
@@ -55,16 +56,17 @@ public class Bank {
                 	System.out.println("Your current Account Balance is: " + account.getAccountBal());
                 	break;
                 case 4:
-                    if (account.getAccountType().contentEquals("SavingsAccount")) {
+                    if (account.getAccountType().contentEquals("Savings")) {
                         account.calculateInterest();
                     } else {
-                        System.out.println("Cannot calculate interest for CurrentAccount.");
+                        System.out.println("Cannot calculate interest for an Current Account.");
                     }
                     break;
                 case 5:
                     System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please choose a valid option.");
+                    break;
             }
         }
     }

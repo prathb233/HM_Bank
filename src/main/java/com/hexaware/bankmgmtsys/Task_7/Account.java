@@ -70,12 +70,12 @@ public class Account {
 		}
 	}
 
-	// toString method
+	// toString method to print the object of Account
 	@Override
 	public String toString() {
 		return "Account Number: " + accountNumber +
 				"\nAccount Type: " + accountType +
-				"\nAccount Balance: $" + accountBalance;
+				"\nAccount Balance: $" + accountBalance + "\n";
 	}
 
 }

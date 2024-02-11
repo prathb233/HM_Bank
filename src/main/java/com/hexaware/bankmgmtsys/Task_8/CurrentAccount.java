@@ -7,7 +7,7 @@ public class CurrentAccount extends Account{
 	final double OVERDRAFT_LIMIT = 1000;
 	
     public CurrentAccount(int accountNumber, double accountBalance) {
-        super(accountNumber, "CurrentAccount", accountBalance);
+        super(accountNumber, "Current", accountBalance);
     }
 	
     @Override

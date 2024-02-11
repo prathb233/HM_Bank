@@ -1,5 +1,6 @@
 CREATE DATABASE HMBank;
 USE HMBank;
+-- DROP DATABASE hmbank;
 
 -- Create the Customers table
 CREATE TABLE Customers (
@@ -9,8 +10,8 @@ CREATE TABLE Customers (
     DOB DATE,
     email VARCHAR(100),
     phone_number VARCHAR(20),
-    address VARCHAR(255),
-    UNIQUE KEY unique_customer (phone_number)
+    address VARCHAR(255)
+    -- UNIQUE KEY unique_customer (phone_number)
 ) AUTO_INCREMENT = 01;
 
 
@@ -61,9 +62,5 @@ BEGIN
 END;
 //
 DELIMITER ;
-
-
-
--- DROP DATABASE hmbank;
 
 

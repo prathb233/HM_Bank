@@ -17,7 +17,8 @@ public class AccountDAO {
     PreparedStatement ps;
     ResultSet rs;
 
-    public void createAccount(Account acc) {
+    public int createAccount(Account acc) {
+    	int generatedAccountNo = 0;
 		try {
 		    con = DBConnection.getDBConn();
 		    ps = con.prepareStatement(
@@ -34,16 +35,15 @@ public class AccountDAO {
 			// Retrieve auto-generated keys (in this case, customerID)
 			ResultSet generatedKeys = ps.getGeneratedKeys();
 				if (generatedKeys.next()) {
-				    int generatedAccountNo = generatedKeys.getInt(1);
+				    generatedAccountNo = generatedKeys.getInt(1);
 				    acc.setAccountNo(generatedAccountNo);
-				    System.out.println("Your new Account No is: " + generatedAccountNo);
 				}
 		    }
 	
 		} catch (SQLException e) {// TODO Auto-generated catch block
 		    e.printStackTrace();
 		}
-
+		return generatedAccountNo;
     }
     
    

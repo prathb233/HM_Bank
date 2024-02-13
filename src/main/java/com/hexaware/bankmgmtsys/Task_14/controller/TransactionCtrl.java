@@ -19,7 +19,7 @@ public class TransactionCtrl implements ITxn{
 	System.out.println("Enter your Account No.:");
 	int accNo = sc.nextInt();
 	txn.setAccountID(accNo);
-	txn.setTransactionType("deposit");
+	txn.setTransactionType("Deposit");
 	txn.setTransactionDate(LocalDate.now());
 	
 	System.out.println("Enter amount to deposit: ");
@@ -36,7 +36,7 @@ public class TransactionCtrl implements ITxn{
 	System.out.println("Enter your Account No.:");
 	int accNo = sc.nextInt();
 	txn.setAccountID(accNo);
-	txn.setTransactionType("withdrawal");
+	txn.setTransactionType("Withdrawal");
 	txn.setTransactionDate(LocalDate.now());
 	
 	System.out.println("Enter amount to withdraw: ");

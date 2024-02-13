@@ -20,10 +20,10 @@ public class Account {
 	}
 	
 	//overload 2
-	public Account(int customerId, String accountType, double accountBalance) {
+	public Account(int customerId, String accountType) {
 		this.customerID = customerId;
 		this.accountType = accountType;
-		this.accountBalance = accountBalance;
+		//this.accountBalance = accountBalance;
 	}
 	
 	

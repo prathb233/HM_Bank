@@ -6,8 +6,8 @@ public class CurrentAccount extends Account{
 		// TODO Auto-generated constructor stub
 	}
 
-	public CurrentAccount(int custID, double amount) {
-		super(custID, "Current", amount);
+	public CurrentAccount(int custID) {
+		super(custID, "Current");
 	}
 
 }

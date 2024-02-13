@@ -3,8 +3,8 @@ package com.hexaware.bankmgmtsys.Task_14.model;
 public class SavingsAccount extends Account{
 	final double INTEREST_RATE = 0.075;
 
-	public SavingsAccount(int customerId, double accountBalance) {
-		super(customerId, "Savings", accountBalance);
+	public SavingsAccount(int customerId) {
+		super(customerId, "Savings");
 	}
 
     @Override //Calculate interest method

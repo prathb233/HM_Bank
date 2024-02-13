@@ -22,12 +22,12 @@ public class AccountDAO {
 		try {
 		    con = DBConnection.getDBConn();
 		    ps = con.prepareStatement(
-			    "INSERT INTO Accounts" + "(customer_id, account_type, balance)" + "VALUES (?,?,?)",
+			    "INSERT INTO Accounts" + "(customer_id, account_type)" + "VALUES (?,?)",
 			    Statement.RETURN_GENERATED_KEYS);
 	
 		    ps.setInt(1, acc.getCustomerId());
 		    ps.setString(2, acc.getAccountType());
-		    ps.setDouble(3, acc.getAccountBal());
+		    //ps.setDouble(3, acc.getAccountBal());
 		    int affectedRows = ps.executeUpdate();
 		    // System.out.println(no_of_rows + " inserted Successfully !!!" );
 	

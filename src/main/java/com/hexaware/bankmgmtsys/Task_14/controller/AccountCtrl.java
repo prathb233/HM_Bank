@@ -8,6 +8,7 @@ import com.hexaware.bankmgmtsys.Task_14.model.Customer;
 import com.hexaware.bankmgmtsys.Task_14.model.SavingsAccount;
 import com.hexaware.bankmgmtsys.Task_14.model.Transaction;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class AccountCtrl implements IAcc {
@@ -27,10 +28,10 @@ public class AccountCtrl implements IAcc {
     @Override
     public void addAccount() {
 
-	System.out.print("\nWhat type of Account you want to open?" 
-						+ "\n1. Savings" 
-						+ "\n2. Current"
-						+ "\n3. Zero Balance" + "\n=> ");
+	System.out.print( "\nWhat type of Account you want to open?" 
+					+ "\n1. Savings" 
+					+ "\n2. Current"
+					+ "\n3. Zero Balance" + "\n=> ");
 
 	int choice = sc.nextInt();
 
@@ -42,16 +43,16 @@ public class AccountCtrl implements IAcc {
 			    System.out.print("Deposit initial balance in your Account $");
 			    double amount = sc.nextDouble();
 			    
-				acc = new SavingsAccount(custID, amount);
+				acc = new SavingsAccount(custID);
 		
 				int accountNumber = dao.createAccount(acc);
 			    System.out.println("Your new Account No is: " + accountNumber);
 
-//				txn = new Transaction();
-//				txn.setAccountID(accountNumber);
-//				txn.setTransactionAmount(amount);
-//				txn.setTransactionType("Initial Deposit");
-//				txn.setTransactionDate(LocalDate.now());
+				txn = new Transaction();
+				txn.setAccountID(accountNumber);
+				txn.setTransactionAmount(amount);
+				txn.setTransactionType("Initial Deposit");
+				txn.setTransactionDate(LocalDate.now());
 				
 				tdao.newTransaction(txn);
 			    break;
@@ -61,8 +62,17 @@ public class AccountCtrl implements IAcc {
 			    System.out.print("Deposit initial balance in your Account: $");
 			    double amount = sc.nextDouble();
 		
-				current = new CurrentAccount(custID, amount);
-				dao.createAccount(current);
+				current = new CurrentAccount(custID);
+				int accountNumber = dao.createAccount(current);
+			    System.out.println("Your new Account No is: " + accountNumber);
+
+				txn = new Transaction();
+				txn.setAccountID(accountNumber);
+				txn.setTransactionAmount(amount);
+				txn.setTransactionType("Initial Deposit");
+				txn.setTransactionDate(LocalDate.now());
+				
+				tdao.newTransaction(txn);
 			    break;
 			}
 		
@@ -84,10 +94,12 @@ public class AccountCtrl implements IAcc {
 		}
     }
 
-    
-    @Override
-    public void viewAccount() {
-	// System.out.println(dao.showAccountDetails) } // TODO Auto-generated method
-	// stub
-    }
+
+	@Override
+	public void viewAccount() {
+    	System.out.println("Enter your Account No.: ");
+    	int accNo = sc.nextInt();
+    	dao.getAccountBalance(accNo);
+		
+	}
 }

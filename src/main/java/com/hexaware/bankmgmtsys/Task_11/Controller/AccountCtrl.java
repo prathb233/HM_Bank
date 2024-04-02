@@ -15,7 +15,7 @@ public class AccountCtrl {
 	public void createAccount(Scanner sc) {
 		List<Account> accounts = new ArrayList<>();
 		System.out.println("\nEnter customer ID: ");
-		int custID = sc.nextInt();
+		//int custID = sc.nextInt();
 		
 		
 		
